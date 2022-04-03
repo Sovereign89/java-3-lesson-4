@@ -1,0 +1,26 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox fx:controller="com.geekbrains.client.ChatController" xmlns:fx="http://javafx.com/fxml" alignment="center" spacing="5" style="-fx-background-color: #DFDFDF;">
+    <HBox fx:id="authPanel" spacing="5" alignment="CENTER">
+        <Label text="Login:" style="-fx-padding: 5 0 5 5;"/>
+        <TextField HBox.hgrow="ALWAYS" fx:id="loginField" promptText="Login"/>
+        <Label text="Password:" style="-fx-padding: 5 0;"/>
+        <PasswordField HBox.hgrow="ALWAYS" fx:id="passwordField" promptText="Password" onAction="#sendAuth"/>
+        <Button fx:id="authButton" HBox.hgrow="ALWAYS" text="Connect" onAction="#sendAuth" maxWidth="120"
+                style="-fx-text-fill: white; -fx-background-color: #444040; -fx-padding: 7 15 10 10; -fx-border-insets: 5px; -fx-background-insets: 5px;"/>
+    </HBox>
+
+    <HBox VBox.vgrow="ALWAYS" spacing="5" style="-fx-background-color: #8B8B8B;" alignment="TOP_CENTER">
+        <TextArea HBox.hgrow="ALWAYS" fx:id="textArea" editable="false" wrapText="true"/>
+        <ListView VBox.vgrow="ALWAYS" fx:id="clientList" minWidth="200" onMouseClicked="#mouseClicked"/>
+    </HBox>
+
+    <HBox fx:id="messagePanel" spacing="5">
+        <Label text="Message:" style="-fx-padding: 5 0 10 5;"/>
+        <TextField fx:id="messageField" promptText="Enter the text you wish to broadcast" HBox.hgrow="ALWAYS" onAction="#sendMessage"/>
+        <Button fx:id="sendButton" text="Send" onAction="#sendMessage" minWidth="120"
+                style="-fx-text-fill: white; -fx-background-color: #444040; -fx-border-insets: 1px; -fx-background-insets: 1px;"/>
+        <Button fx:id="changeNickname" text="Change nickname" onAction="#changeNickname" minWidth="120"
+                style="-fx-text-fill: white; -fx-background-color: #444040; -fx-border-insets: 1px; -fx-background-insets: 1px;"/>
+    </HBox>
+</VBox>
