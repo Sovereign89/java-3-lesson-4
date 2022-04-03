@@ -1,0 +1,12 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox fx:controller="com.geekbrains.client.PopupController" xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" spacing="5" style="-fx-background-color: #DFDFDF;">
+    <HBox VBox.vgrow="ALWAYS" spacing="5" alignment="CENTER">
+        <Label style="-fx-padding: 5 0 5 0;"/>
+        <TextField fx:id="nicknameField" promptText="Enter new nickname" HBox.hgrow="ALWAYS" onAction="#changeUsername" style="-fx-padding: 0 5 5 0;"/>
+        <Button text="Change nickname" onAction="#changeUsername"
+                style="-fx-text-fill: white; -fx-background-color: #444040; -fx-border-insets: 1px; -fx-background-insets: 1px;"/>
+        <Button fx:id="closeButton" text="Cancel" onAction="#close"
+                style="-fx-text-fill: white; -fx-background-color: #444040; -fx-border-insets: 1px; -fx-background-insets: 1px;"/>
+    </HBox>
+</VBox>
